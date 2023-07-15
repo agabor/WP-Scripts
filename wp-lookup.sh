@@ -14,5 +14,4 @@ db_pass=$(grep DB_PASSWORD $1/wp-config.php | awk -F "'" '{print $4}')
 
 echo -e "\n\nsearching snipets\n\n"
 
-echo "select id, name, description, code from wp_fitness_snippets where code like \"%$2%\";" | mariadb --host="localhost" 
---user="$db_user" --database="$db_name" --password="$db_pass"
+echo "select id, name, description, code from wp_fitness_snippets where code like \"%$2%\";" | mariadb --host="localhost" --user="$db_user" --database="$db_name" --password="$db_pass"
